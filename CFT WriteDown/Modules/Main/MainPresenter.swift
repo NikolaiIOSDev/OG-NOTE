@@ -25,5 +25,9 @@ class MainPresenter{
 //MARK: - Implementation MainPresenterProtocol
 
 extension MainPresenter:MainPresenterProtocols{
+    func didLoad() {
+        interactor.getNote()
+    }
+    
     
 }

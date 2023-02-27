@@ -20,6 +20,7 @@ class DetailedViewController: UIViewController {
     var imageName:String = String()
     var imagePath:URL = URL(fileURLWithPath: "")
     
+    @IBOutlet var removePhoto: UIButton!
     var imageScreen:Data = Data()
     
     func getImage() {
@@ -29,8 +30,9 @@ class DetailedViewController: UIViewController {
     }
     
     
-
     @IBOutlet var backButton: UIButton!
+    
+
     
     @IBOutlet var largeTitleNote: UILabel!
     @IBOutlet var titleNote: UITextView!
@@ -92,6 +94,11 @@ class DetailedViewController: UIViewController {
         backButton.backgroundColor = UIColor(named: ColorConstant.DetailedModule.colorButtonsDetailed)
         backButton.tintColor = UIColor(named: ColorConstant.DetailedModule.colorButtonsTint)
         
+        removePhoto.layer.cornerRadius = 8
+        removePhoto.backgroundColor = UIColor(named: ColorConstant.DetailedModule.colorButtonsDetailed)
+        removePhoto.tintColor = UIColor(named: ColorConstant.DetailedModule.colorButtonsTint)
+        
+        
         imageNote.layer.cornerRadius = 15
         
         
@@ -125,7 +132,14 @@ class DetailedViewController: UIViewController {
     
     @IBAction func setupPhoto(_ sender: UIButton) {
         present(imagePicker, animated: true)
-
+    }
+    
+    
+    @IBAction func removePhotoAction(_ sender: UIButton) {
+        note?.imageNote = nil
+        imageNote = nil
+        save()
+        removePhoto.isHidden = true
     }
     
 }

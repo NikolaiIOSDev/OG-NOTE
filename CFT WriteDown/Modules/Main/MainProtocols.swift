@@ -12,11 +12,13 @@ protocol MainViewProtocols:AnyObject{
 }
 
 protocol MainInteractorProtocols:AnyObject{
-    
+    func getNote()
+    func saveNote()
+
 }
 
 protocol MainPresenterProtocols:AnyObject{
-    
+    func didLoad()
 }
 
 protocol MainRouterProtocols:AnyObject{

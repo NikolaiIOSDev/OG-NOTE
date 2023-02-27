@@ -16,7 +16,6 @@ class MainViewController: UIViewController, UINavigationControllerDelegate {
     
     var context = CoreDataManager.shared.persistentContainer.viewContext
     var notes:[Note] = [Note]()
-    var notesEdit:[String] = [String]()
     
     
     private var mainCollectionView:UICollectionView!
@@ -27,7 +26,6 @@ class MainViewController: UIViewController, UINavigationControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         settingsBarButton()
-//        view.backgroundColor = UIColor(named: ColorConstant.MainModule.colorBackgroundMain)
         settingsCollection()
         activateConstraint()
         title = "OG NOTE"
@@ -35,22 +33,14 @@ class MainViewController: UIViewController, UINavigationControllerDelegate {
         navigationItem.rightBarButtonItems = [barButton]
         navigationItem.leftBarButtonItems = [leftBarButton]
         
-        loadNote()
    
         settingsBarButton()
 
         
     }
-    
-//    override func viewDidAppear(_ animated: Bool) {
-//        super.viewDidAppear(animated)
-//        loadNote()
-//        mainCollectionView.reloadData()
-//    }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        loadNote()
         mainCollectionView.reloadData()
     }
     
@@ -107,7 +97,7 @@ class MainViewController: UIViewController, UINavigationControllerDelegate {
         DispatchQueue.main.async {
             self.mainCollectionView.reloadData()
         }
-        }
+    }
         
     
     func save(){
@@ -121,17 +111,17 @@ class MainViewController: UIViewController, UINavigationControllerDelegate {
         
     }
     
-    func loadNote(){
-         let request = NSFetchRequest<Note>(entityName: "Note")
-    
-        do{
-            let objects = try context.fetch(request)
-            notes = objects
-        } catch {
-            print(error.localizedDescription)
-        }
-        
-    }
+//    func loadNote(){
+//         let request = NSFetchRequest<Note>(entityName: "Note")
+//
+//        do{
+//            let objects = try context.fetch(request)
+//            notes = objects
+//        } catch {
+//            print(error.localizedDescription)
+//        }
+//
+//    }
     
     
     

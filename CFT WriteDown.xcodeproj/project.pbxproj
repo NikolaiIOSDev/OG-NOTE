@@ -26,7 +26,6 @@
 		E794E17429A3906E00B27380 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E794E17229A3906E00B27380 /* Main.storyboard */; };
 		E794E17629A3906F00B27380 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E794E17529A3906F00B27380 /* Assets.xcassets */; };
 		E794E17929A3906F00B27380 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E794E17729A3906F00B27380 /* LaunchScreen.storyboard */; };
-		E794E18929A3954D00B27380 /* Mynerve-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E794E18829A3954D00B27380 /* Mynerve-Regular.ttf */; };
 		E794E18D29A3977A00B27380 /* MainView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E794E18C29A3977A00B27380 /* MainView.storyboard */; };
 		E794E18F29A397E700B27380 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E794E18E29A397E700B27380 /* SplashViewController.swift */; };
 		E794E19129A398B800B27380 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E794E19029A398B800B27380 /* Constants.swift */; };
@@ -63,7 +62,6 @@
 		E794E17529A3906F00B27380 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E794E17829A3906F00B27380 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E794E17A29A3906F00B27380 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E794E18829A3954D00B27380 /* Mynerve-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Mynerve-Regular.ttf"; path = "../../../../../../Fonts/Mynerve/Mynerve-Regular.ttf"; sourceTree = "<group>"; };
 		E794E18C29A3977A00B27380 /* MainView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainView.storyboard; sourceTree = "<group>"; };
 		E794E18E29A397E700B27380 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		E794E19029A398B800B27380 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -156,7 +154,6 @@
 				E794E19029A398B800B27380 /* Constants.swift */,
 				E7487A4F29A9631200B27A20 /* Oswald.ttf */,
 				E7487A4D29A9620D00B27A20 /* PlayfairDisplay.ttf */,
-				E794E18829A3954D00B27380 /* Mynerve-Regular.ttf */,
 				E794E19229A3DD9800B27380 /* GajrajOne-Regular.ttf */,
 				E794E17529A3906F00B27380 /* Assets.xcassets */,
 				E794E17729A3906F00B27380 /* LaunchScreen.storyboard */,
@@ -276,7 +273,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E794E18D29A3977A00B27380 /* MainView.storyboard in Resources */,
-				E794E18929A3954D00B27380 /* Mynerve-Regular.ttf in Resources */,
 				E794E17929A3906F00B27380 /* LaunchScreen.storyboard in Resources */,
 				E794E17629A3906F00B27380 /* Assets.xcassets in Resources */,
 				E7487A5029A9631200B27A20 /* Oswald.ttf in Resources */,
