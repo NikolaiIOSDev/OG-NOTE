@@ -5,7 +5,7 @@
 //  Created by Николай Федоров on 20.02.2023.
 //
 
-import Foundation
+import UIKit
 
 class MainPresenter{
     weak var view:MainViewProtocols!
@@ -16,6 +16,7 @@ class MainPresenter{
     init( interactor: MainInteractorProtocols, router: MainRouterProtocols) {
         self.interactor = interactor
         self.router = router
+         
     }
     
     
@@ -25,6 +26,14 @@ class MainPresenter{
 //MARK: - Implementation MainPresenterProtocol
 
 extension MainPresenter:MainPresenterProtocols{
+    
+    func didTapRemoveButton() {
+        
+    }
+    
+    
+    
+    
     
     // Datas interaction
     func didLoad() {
@@ -46,12 +55,45 @@ extension MainPresenter:MainPresenterProtocols{
         
     }
     
-    func didTapRemoveButton() {
-        
-    }
     
-    func didTapDetailedButton(entity note: Note) {
-        router.presentDetailedModule(for: note)
+    func didTapRemoveButton(entity notes: [Note], collection collectionView: UICollectionView, for cell: UICollectionViewCell) {
+        guard let indexPath = collectionView.indexPath(for: cell) else {return}
+        var notesCopy = notes
+        let row = indexPath.row
+        let object = notesCopy[row]
+        //        context.delete(object)
+        notesCopy.remove(at:row)
+        //        save()
+        DispatchQueue.main.async {
+            collectionView.reloadData()
+            
+        }
     }
+        
+    
+        
+        
+        func didTapDetailedButton(entity notes: [Note], collection collectionView: UICollectionView, for cell: UICollectionViewCell){
+            guard let indexPath = collectionView.indexPath(for: cell) else {return}
+            let row = indexPath.row
+            //
+            //
+            let storyboardDetailed = UIStoryboard(name: "Detailed", bundle: nil)
+            
+            if let detailedVC = storyboardDetailed.instantiateViewController(withIdentifier: "Detailed") as? DetailedViewController  {
+                let note = notes[row]
+                detailedVC.note = note
+                
+                detailedVC.modalPresentationStyle = .fullScreen
+                
+                router.presentDetailedModule(for: note)
+                
+                
+                
+                
+                
+            }
+        }
     
 }
+

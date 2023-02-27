@@ -8,14 +8,15 @@
 import Foundation
 
 protocol DetailedViewControllerProtocol:AnyObject{
-    
+    func showNote(note:Note)
 }
 
 protocol DetailedInteractorProtocol:AnyObject{
-    
+    func getNote()->Note
 }
 
 protocol DetailedPresenterProtocol:AnyObject {
+    func didLoad()
     
 }
 

@@ -14,7 +14,8 @@ class MainRouter{
 //MARK: - Implementation MainRouterProtocol
 
 extension MainRouter:MainRouterProtocols{
-    func presentDetailedModule(for data: Note) {
+    func presentDetailedModule(for data: Note?) {
+        guard let data = data else {return}
         let detailedVC = DetailedBuilder.buildDetailedModule(entity: data)
         detailedVC.modalPresentationStyle = .fullScreen
         view.present(detailedVC, animated: true)

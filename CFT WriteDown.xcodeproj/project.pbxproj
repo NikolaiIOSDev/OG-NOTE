@@ -19,7 +19,7 @@
 		E7487A5029A9631200B27A20 /* Oswald.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E7487A4F29A9631200B27A20 /* Oswald.ttf */; };
 		E7708DB529A6600500DCD081 /* Detailed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7708DB429A6600500DCD081 /* Detailed.storyboard */; };
 		E7708DBF29A6A79D00DCD081 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E7708DBD29A6A79D00DCD081 /* Model.xcdatamodeld */; };
-		E7708DC629A6A86E00DCD081 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7708DC529A6A86E00DCD081 /* CoreDataManager.swift */; };
+		E7708DC629A6A86E00DCD081 /* CoreDataProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7708DC529A6A86E00DCD081 /* CoreDataProject.swift */; };
 		E794E16D29A3906E00B27380 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E794E16C29A3906E00B27380 /* AppDelegate.swift */; };
 		E794E16F29A3906E00B27380 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E794E16E29A3906E00B27380 /* SceneDelegate.swift */; };
 		E794E17129A3906E00B27380 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E794E17029A3906E00B27380 /* MainViewController.swift */; };
@@ -53,7 +53,7 @@
 		E7487A4F29A9631200B27A20 /* Oswald.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Oswald.ttf; sourceTree = "<group>"; };
 		E7708DB429A6600500DCD081 /* Detailed.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Detailed.storyboard; sourceTree = "<group>"; };
 		E7708DBE29A6A79D00DCD081 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
-		E7708DC529A6A86E00DCD081 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		E7708DC529A6A86E00DCD081 /* CoreDataProject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataProject.swift; sourceTree = "<group>"; };
 		E794E16929A3906E00B27380 /* CFT WriteDown.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CFT WriteDown.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E794E16C29A3906E00B27380 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E794E16E29A3906E00B27380 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -107,7 +107,7 @@
 				E73CE63029AAC80D005D968E /* Note.swift */,
 				E73CE62E29AAC69F005D968E /* Note CoreData.swift */,
 				E7708DBD29A6A79D00DCD081 /* Model.xcdatamodeld */,
-				E7708DC529A6A86E00DCD081 /* CoreDataManager.swift */,
+				E7708DC529A6A86E00DCD081 /* CoreDataProject.swift */,
 			);
 			path = "Core Data Manager";
 			sourceTree = "<group>";
@@ -302,7 +302,7 @@
 				E794E16D29A3906E00B27380 /* AppDelegate.swift in Sources */,
 				E794E16F29A3906E00B27380 /* SceneDelegate.swift in Sources */,
 				E794E18F29A397E700B27380 /* SplashViewController.swift in Sources */,
-				E7708DC629A6A86E00DCD081 /* CoreDataManager.swift in Sources */,
+				E7708DC629A6A86E00DCD081 /* CoreDataProject.swift in Sources */,
 				E794E19B29A3DEAD00B27380 /* MainBuilder.swift in Sources */,
 				E730231E29A626F50032A960 /* DetailedPresenter.swift in Sources */,
 				E794E1A229A50F9D00B27380 /* MainCollectionViewCell.swift in Sources */,

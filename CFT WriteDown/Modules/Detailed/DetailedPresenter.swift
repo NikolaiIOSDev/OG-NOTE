@@ -19,5 +19,12 @@ class DetailedPresenter{
 }
 
 extension DetailedPresenter:DetailedPresenterProtocol{
+    func didLoad(){
+      let note = interactor.getNote()
+        view.showNote(note: note)
+    
+    }
+    
+    
     
 }

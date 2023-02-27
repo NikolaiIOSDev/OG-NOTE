@@ -8,8 +8,8 @@
 import Foundation
 import CoreData
 
-class CoreDataManager {
-    static let shared = CoreDataManager()
+class CoreDataProject {
+    static let shared = CoreDataProject()
     
     lazy var persistentContainer:NSPersistentContainer={
         let container = NSPersistentContainer(name: "Model")
@@ -33,7 +33,4 @@ class CoreDataManager {
             fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
         }
     }
-    
-    
-    
 }

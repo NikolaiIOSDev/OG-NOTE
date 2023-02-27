@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 protocol MainViewProtocols:AnyObject{
     func showNote(note:[Note])
@@ -24,11 +25,12 @@ protocol MainPresenterProtocols:AnyObject{
     
     func didTapEditButton()
     func didTapRemoveButton()
-    func didTapDetailedButton(entity note: Note)
+    func didTapDetailedButton(entity notes: [Note], collection collectionView: UICollectionView, for cell: UICollectionViewCell)
+    func didTapRemoveButton(entity notes: [Note], collection collectionView: UICollectionView, for cell: UICollectionViewCell)
     
     
 }
 
 protocol MainRouterProtocols:AnyObject{
-    func presentDetailedModule(for data:Note)
+    func presentDetailedModule(for data:Note?)
 }

@@ -14,7 +14,7 @@ class MainViewController: UIViewController, UINavigationControllerDelegate {
           
     var presenter:MainPresenterProtocols!
     
-    var context = CoreDataManager.shared.persistentContainer.viewContext
+    var context = CoreDataProject.shared.persistentContainer.viewContext
     var notes:[Note] = [Note]()
     
     
@@ -64,7 +64,7 @@ class MainViewController: UIViewController, UINavigationControllerDelegate {
             
         }
         notes = []
-        save()
+//        save()
         mainCollectionView.reloadData()
         
     }
@@ -77,7 +77,7 @@ class MainViewController: UIViewController, UINavigationControllerDelegate {
             guard let self = self else{return}
             let newNote = Note(context: self.context)
             newNote.text = textField.text
-            self.save()
+//            self.save()
             self.notes.append(newNote)
             self.mainCollectionView.reloadData()
             print("add")
@@ -100,32 +100,6 @@ class MainViewController: UIViewController, UINavigationControllerDelegate {
     }
         
     
-    func save(){
-        do{
-          try  context.save()
-
-        } catch {
-            print(error.localizedDescription)
-        }
-
-        
-    }
-    
-//    func loadNote(){
-//         let request = NSFetchRequest<Note>(entityName: "Note")
-//
-//        do{
-//            let objects = try context.fetch(request)
-//            notes = objects
-//        } catch {
-//            print(error.localizedDescription)
-//        }
-//
-//    }
-    
-    
-    
-    
     //MARK: - Settings UICollectionView
     private func settingsCollection(){
         let mainCollectionViewLayot = UICollectionViewFlowLayout()
@@ -145,7 +119,7 @@ class MainViewController: UIViewController, UINavigationControllerDelegate {
         
         mainCollectionView.showsVerticalScrollIndicator = false
         mainCollectionView.translatesAutoresizingMaskIntoConstraints = false
-//        mainCollectionView.backgroundColor = UIColor(named: ColorConstant.MainModule.colorBackgroundMain)
+
     }
 
     
@@ -171,14 +145,7 @@ extension MainViewController:UICollectionViewDataSource, UICollectionViewDelegat
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellConstant.MainModule.idCell, for: indexPath) as! MainViewCell
         
-//        let storyboard = UIStoryboard(name: "Detailed", bundle: nil)
-//        if let detailedVC = storyboard.instantiateViewController(withIdentifier: "Detailed") as? DetailedViewController{
-//            detailedVC.transferClosure = { txt in
-//                cell.noteLabel.text = txt
-//            }
-//        }
         
-                
         cell.delegate  = self
         cell.noteLabel.text = notes[indexPath.row].text
         cell.configurationEditButtonTarget()
@@ -216,7 +183,7 @@ extension MainViewController:MainViewCellDelegate{
             
             guard let self = self else {return}
             self.notes[row].text = textField.text
-            self.save()
+//            self.save()
             DispatchQueue.main.async {
                 self.mainCollectionView.reloadData()
             }
@@ -245,45 +212,21 @@ extension MainViewController:MainViewCellDelegate{
     }
     
     func tappedRemove(from cell: UICollectionViewCell) {
-        guard let indexPath = mainCollectionView.indexPath(for: cell) else {return}
-        let row = indexPath.row
-        let object = notes[row]
-        context.delete(object)
-        notes.remove(at:row)
-        save()
-        DispatchQueue.main.async {
-            self.mainCollectionView.reloadData()
-            
-        }
+        presenter.didTapRemoveButton(entity: notes, collection: mainCollectionView, for: cell)
         
     }
     
     
     func tappedDetailed(from cell: UICollectionViewCell) {
-        guard let indexPath = mainCollectionView.indexPath(for: cell) else {return}
-        let row = indexPath.row
 
-        
-        let storyboardDetailed = UIStoryboard(name: "Detailed", bundle: nil)
-        
-        if let detailedVC = storyboardDetailed.instantiateViewController(withIdentifier: "Detailed") as? DetailedViewController  {
-            detailedVC.note = self.notes[row]
-            
-            detailedVC.modalPresentationStyle = .fullScreen
-            present(detailedVC, animated: true)
-
-            
-        }
-        
-        
-        
+    presenter.didTapDetailedButton(entity: notes, collection: mainCollectionView, for: cell)
+     
+      }
         
     }
 
-}
 
-
-    //MARK: - Implementation MainViewProtocols
+//MARK: - Implementation MainViewProtocols
 
 extension MainViewController:MainViewProtocols{
     func showNote(note: [Note]) {

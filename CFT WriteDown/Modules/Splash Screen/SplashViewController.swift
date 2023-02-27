@@ -75,10 +75,8 @@ class SplashViewController: UIViewController {
     
     //MARK: - Transition Method
     @objc private func goToMain(){
-        let storyboard = UIStoryboard(name: "MainView", bundle: nil)
         
-        guard let mainVC = storyboard.instantiateViewController(withIdentifier: "MainView") as? MainViewController else {return}
-        mainVC.modalPresentationStyle = .fullScreen
+        let mainVC = MainBuilder.buildMainModule()
         navigationController?.pushViewController(mainVC, animated: true)
     }
     

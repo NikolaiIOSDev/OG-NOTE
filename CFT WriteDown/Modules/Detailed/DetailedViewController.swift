@@ -12,7 +12,7 @@ import CoreData
 
 class DetailedViewController: UIViewController {
    
-    var context = CoreDataManager.shared.persistentContainer.viewContext
+    var context = CoreDataProject.shared.persistentContainer.viewContext
     var note:Note?
     
     var presenter:DetailedPresenterProtocol!
@@ -48,7 +48,7 @@ class DetailedViewController: UIViewController {
         super.viewDidLoad()
         getImage()
         
-        loadNote()
+//        loadNote()
         
         settingUIElements()
         imagePicker.sourceType = .camera
@@ -56,19 +56,22 @@ class DetailedViewController: UIViewController {
         imagePicker.allowsEditing = false
         
         cancelKeyboard()
+        
+        presenter.didLoad()
+        
     }
    
-    func loadNote(){
-        DispatchQueue.main.async {
-            self.titleNote.text = self.note?.text
-            
-            
-            if let image = self.note?.imageNote {
-                self.imageNote.image = UIImage(data: image)
-            }
-            
-        }
-    }
+//    func loadNote(){
+//        DispatchQueue.main.async {
+//            self.titleNote.text = self.note?.text
+//
+//
+//            if let image = self.note?.imageNote {
+//                self.imageNote.image = UIImage(data: image)
+//            }
+//
+//        }
+//    }
     
 
     
@@ -177,6 +180,13 @@ extension DetailedViewController:UIImagePickerControllerDelegate, UINavigationCo
 //MARK: - Implementation Protocol
 
 extension DetailedViewController:DetailedViewControllerProtocol{
+    func showNote(note: Note) {
+        titleNote.text = note.text
+        if let image = self.note?.imageNote {
+            self.imageNote.image = UIImage(data: image)
+        }
+    }
+    
     
 }
 
