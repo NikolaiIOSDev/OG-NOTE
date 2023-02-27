@@ -8,7 +8,7 @@
 import Foundation
 
 protocol MainViewProtocols:AnyObject{
-    
+    func showNote(note:[Note])
 }
 
 protocol MainInteractorProtocols:AnyObject{
@@ -18,9 +18,17 @@ protocol MainInteractorProtocols:AnyObject{
 }
 
 protocol MainPresenterProtocols:AnyObject{
-    func didLoad()
+    func didLoad()    
+    func editNote(notes:[Note])
+    func removeNote(notes:[Note])
+    
+    func didTapEditButton()
+    func didTapRemoveButton()
+    func didTapDetailedButton(entity note: Note)
+    
+    
 }
 
 protocol MainRouterProtocols:AnyObject{
-    
+    func presentDetailedModule(for data:Note)
 }

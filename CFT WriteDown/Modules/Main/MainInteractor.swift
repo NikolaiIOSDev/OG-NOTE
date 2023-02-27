@@ -11,7 +11,7 @@ import CoreData
 class MainInteractor{
     weak var presenter:MainPresenterProtocols!
     var context = CoreDataManager.shared.persistentContainer.viewContext
-            
+    var notes = [Note]()
 }
 
 

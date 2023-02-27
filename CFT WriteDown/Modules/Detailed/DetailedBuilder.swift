@@ -8,7 +8,7 @@
 import UIKit
 
 class DetailedBuilder{
-    class func buildDetailedModule()->DetailedViewController{
+    class func buildDetailedModule(entity  note:Note)->DetailedViewController{
         let interactor = DetailedInteractor()
         let router = DetailedRouter()
         let presenter = DetailedPresenter(router: router, interactor: interactor)

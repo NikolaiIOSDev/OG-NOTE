@@ -8,11 +8,19 @@
 import Foundation
 
 class MainRouter{
-    weak var view:MainViewProtocols!
+    weak var view:MainViewController!
 }
 
 //MARK: - Implementation MainRouterProtocol
 
 extension MainRouter:MainRouterProtocols{
+    func presentDetailedModule(for data: Note) {
+        let detailedVC = DetailedBuilder.buildDetailedModule(entity: data)
+        detailedVC.modalPresentationStyle = .fullScreen
+        view.present(detailedVC, animated: true)
+        
+        
+    }
+    
     
 }

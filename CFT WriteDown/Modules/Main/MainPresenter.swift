@@ -25,9 +25,33 @@ class MainPresenter{
 //MARK: - Implementation MainPresenterProtocol
 
 extension MainPresenter:MainPresenterProtocols{
+    
+    // Datas interaction
     func didLoad() {
         interactor.getNote()
     }
     
+    func editNote(notes: [Note]) {
+        
+    }
+    
+    func removeNote(notes: [Note]) {
+        
+    }
+    
+    
+    // Buttons interaction
+    
+    func didTapEditButton() {
+        
+    }
+    
+    func didTapRemoveButton() {
+        
+    }
+    
+    func didTapDetailedButton(entity note: Note) {
+        router.presentDetailedModule(for: note)
+    }
     
 }

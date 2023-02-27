@@ -286,5 +286,9 @@ extension MainViewController:MainViewCellDelegate{
     //MARK: - Implementation MainViewProtocols
 
 extension MainViewController:MainViewProtocols{
+    func showNote(note: [Note]) {
+        
+    }
+    
     
 }
