@@ -15,7 +15,7 @@ class MainViewController: UIViewController, UINavigationControllerDelegate {
     //MARK: - Properties
     var presenter:MainPresenterProtocols!
     
-    var context = CoreDataProject.shared.persistentContainer.viewContext
+    var context = CoreDataManager.shared.persistentContainer.viewContext
     var notes:[Note] = [Note]()
     
     

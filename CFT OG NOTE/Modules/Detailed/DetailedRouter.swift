@@ -12,5 +12,6 @@ class DetailedRouter{
 }
 
 extension DetailedRouter:DetailedRouterProtocol{
+    //No Transitions
     
 }

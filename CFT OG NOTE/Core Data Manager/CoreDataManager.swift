@@ -8,8 +8,8 @@
 import Foundation
 import CoreData
 
-class CoreDataProject {
-    static let shared = CoreDataProject()
+class CoreDataManager {
+    static let shared = CoreDataManager()
     
     lazy var persistentContainer:NSPersistentContainer={
         let container = NSPersistentContainer(name: "Model")

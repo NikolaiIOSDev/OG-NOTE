@@ -9,7 +9,7 @@ import Foundation
 
 class DetailedInteractor{
     weak var presenter:DetailedPresenterProtocol!
-    
+    var context = CoreDataManager.shared.persistentContainer.viewContext
     var note:Note
     
     init(note: Note) {
@@ -20,8 +20,22 @@ class DetailedInteractor{
 }
 
 extension DetailedInteractor:DetailedInteractorProtocol{
-    func getNote()->Note{
+     func getNote()->Note{
+        presenter.loadNote(note: note)
         return note
+    }
+    
+    func saveNote(){
+        do{
+            try context.save()
+        } catch{
+            print(error.localizedDescription)
+        }
+    }
+    
+    func getDocumentsURL()->URL {
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        return paths[0]
     }
     
 }

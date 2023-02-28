@@ -11,25 +11,20 @@ import CoreData
 
 
 class DetailedViewController: UIViewController {
+    
+    //MARK: - Properties
    
-    var context = CoreDataProject.shared.persistentContainer.viewContext
+    var context = CoreDataManager.shared.persistentContainer.viewContext
     var note:Note?
     
     var presenter:DetailedPresenterProtocol!
     
     var imageName:String = String()
     var imagePath:URL = URL(fileURLWithPath: "")
+    var imageScreen:Data = Data()
+
     
     @IBOutlet var removePhoto: UIButton!
-    var imageScreen:Data = Data()
-    
-    func getImage() {
-        imageName = imagePath.absoluteString
-        
-        print(imageName)
-    }
-    
-    
     @IBOutlet var backButton: UIButton!
     
 
@@ -43,9 +38,13 @@ class DetailedViewController: UIViewController {
     
     private let imagePicker = UIImagePickerController()
     
-    
+    //MARK: - Life Cycle Controller
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        presenter.didLoad()
+        
+        
         getImage()
         
 //        loadNote()
@@ -61,21 +60,11 @@ class DetailedViewController: UIViewController {
         
     }
    
-//    func loadNote(){
-//        DispatchQueue.main.async {
-//            self.titleNote.text = self.note?.text
-//
-//
-//            if let image = self.note?.imageNote {
-//                self.imageNote.image = UIImage(data: image)
-//            }
-//
-//        }
-//    }
     
 
     
-    
+    //MARK: - Settings UI
+
     
     func settingUIElements(){
 
@@ -107,13 +96,7 @@ class DetailedViewController: UIViewController {
         
     }
     
-    func save(){
-        do{
-          try context.save()
-        } catch {
-            print(error.localizedDescription)
-        }
-    }
+    //MARK: - Actions Methods
     
     func cancelKeyboard(){
         let tapScreen = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
@@ -123,14 +106,12 @@ class DetailedViewController: UIViewController {
     }
     @objc func dismissKeyboard () {
         view.endEditing(true)
-        note?.text = titleNote.text
-        save()
+        presenter.didTapBackButton(entity: &note, titleNote: titleNote)
     }
     
     @IBAction func backButtonAction(_ sender: UIButton) {
         dismiss(animated: true)
-        note?.text = titleNote.text
-        save()
+        presenter.didTapBackButton(entity: &note, titleNote: titleNote)
     }
     
     @IBAction func setupPhoto(_ sender: UIButton) {
@@ -139,41 +120,27 @@ class DetailedViewController: UIViewController {
     
     
     @IBAction func removePhotoAction(_ sender: UIButton) {
-        note?.imageNote = nil
-        imageNote = nil
-        save()
-        removePhoto.isHidden = true
+        presenter.didTapRemovePhotoButton(entity: &note, imageNote: imageNote)
     }
     
 }
 
+//MARK: - Image Manipulation
 
 extension DetailedViewController:UIImagePickerControllerDelegate, UINavigationControllerDelegate{
 
-   //MARK: - Image Manipulation
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        if let image = info[.originalImage] as? UIImage {
-            imageNote.image = image
-            imageName = UUID().uuidString
-            imagePath = getDocumentsURL().appendingPathExtension(imageName)
-            
-            
-            if let jpegData = image.jpegData(compressionQuality: 0.8){
-                try? jpegData.write(to: imagePath)
-                note?.imageNote = jpegData
-                save()
-                
-            }
-            
-            
-        }
+        presenter.didTapSetupPhotoButton(entity: &note, image: imageNote, imageName: &imageName, imagePath: &imagePath, didFinishPickingMediaWithInfo: info)
+        
         imagePicker.dismiss(animated: true)
     }
     
-    func getDocumentsURL()->URL {
-        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-        return paths[0]
+    func getImage() {
+        imageName = imagePath.absoluteString
+        
+        print(imageName)
     }
+    
     
 }
 
@@ -181,12 +148,18 @@ extension DetailedViewController:UIImagePickerControllerDelegate, UINavigationCo
 
 extension DetailedViewController:DetailedViewControllerProtocol{
     func showNote(note: Note) {
-        titleNote.text = note.text
-        if let image = self.note?.imageNote {
-            self.imageNote.image = UIImage(data: image)
+        self.note = note
+        DispatchQueue.main.async {
+            
+            self.titleNote.text = self.note?.text
+            if let image = self.note?.imageNote {
+                self.imageNote.image = UIImage(data: image)
+                
+            }
         }
+        
     }
-    
+
     
 }
 
