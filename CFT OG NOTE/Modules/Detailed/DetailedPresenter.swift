@@ -18,28 +18,9 @@ class DetailedPresenter{
     }
 }
 
+//MARK: - Implementation DetailedPresenterProtocol
+
 extension DetailedPresenter:DetailedPresenterProtocol{
-    
-    
-    func didTapBackButton(entity note: inout Note?, titleNote text: UITextView) {
-        if let note = note {
-            note.text = text.text
-        }
-        interactor.saveNote()
-
-    }
-
-    func didTapRemovePhotoButton(entity note: inout Note?, imageNote image:UIImageView) {
-        
-        if let note = note {
-            note.imageNote = nil
-            image.image = nil
-        }
-        interactor.saveNote()
-
-    }
-    
- 
     
     // Datas interaction
 
@@ -48,33 +29,56 @@ extension DetailedPresenter:DetailedPresenterProtocol{
     }
     
     func loadNote(note:Note){
-        let detailedNote = interactor.getNote()
-        self.view.showNote(note: detailedNote)
+        self.view.showNote(note: note)
     }
     
     
     // Work with Picker
-     func didTapSetupPhotoButton(entity note: inout Note?, image imageNote: UIImageView, imageName: inout String, imagePath path: inout URL, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-         guard let note = note else {return}
+     func didTapSetupPhotoButton(image imageNote: UIImageView, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
             if let image = info[.originalImage] as? UIImage {
                 imageNote.image = image
-                imageName = UUID().uuidString
-                path = interactor.getDocumentsURL().appendingPathExtension(imageName)
-                
+                interactor.imageName = UUID().uuidString
+                interactor.imagePath = interactor.getDocumentsURL().appendingPathExtension(interactor.imageName)
+                print(interactor.imagePath.absoluteString)
                 
                 if let jpegData = image.jpegData(compressionQuality: 0.8){
-                    try? jpegData.write(to: path)
-                    note.imageNote = jpegData
-                    
-
+                    try?
+                    jpegData.write(to: interactor.imagePath, options: .completeFileProtection)
+                    interactor.note.imageNote = jpegData
+                    interactor.saveNote()
                     
                 }
                 
                 
             }
         }
+    
+    func removeButtonHidden(_ button:UIButton){
+        if interactor.note.imageNote == nil {
+            button.isHidden = true
+        } else {
+            button.isHidden = false
+        }
     }
+    
+    func didTapBackButton( titleNote text: UITextView) {
+    
+        interactor.note.text = text.text
+
+        interactor.saveNote()
+
+    }
+
+    func didTapRemovePhotoButton( imageNote image:UIImageView) {
+        
+        interactor.note.imageNote = nil
+        image.image = nil
+        
+        interactor.saveNote()
+
+    }
+}
 
     
     

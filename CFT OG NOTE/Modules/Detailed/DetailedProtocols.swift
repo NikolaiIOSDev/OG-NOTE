@@ -13,7 +13,11 @@ protocol DetailedViewControllerProtocol:AnyObject{
 }
 
 protocol DetailedInteractorProtocol:AnyObject{
-    func getNote()->Note
+    var note:Note {get set}
+    var imageName:String {get set}
+    var imagePath:URL {get set}
+    
+    func getNote()
     func getDocumentsURL()->URL
     
     func saveNote()
@@ -23,19 +27,11 @@ protocol DetailedInteractorProtocol:AnyObject{
 protocol DetailedPresenterProtocol:AnyObject {
     func didLoad()
     func loadNote(note:Note)
+    func removeButtonHidden(_ button:UIButton)
     
-    func didTapSetupPhotoButton(entity note: inout Note?, image imageNote: UIImageView, imageName:inout String, imagePath path:inout URL,  didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any])
-    
-    func  didTapBackButton(entity note:inout Note?, titleNote text:UITextView)
-    
-
-    
-    func didTapRemovePhotoButton(entity note:inout Note?, imageNote image:UIImageView)
-    
-    
-    
-    
-    
+    func didTapSetupPhotoButton(image imageNote: UIImageView, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) 
+    func  didTapBackButton(titleNote text:UITextView)
+    func didTapRemovePhotoButton(imageNote image:UIImageView)
     
 }
 

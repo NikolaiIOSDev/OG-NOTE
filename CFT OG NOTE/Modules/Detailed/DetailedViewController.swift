@@ -15,13 +15,10 @@ class DetailedViewController: UIViewController {
     //MARK: - Properties
    
     var context = CoreDataManager.shared.persistentContainer.viewContext
-    var note:Note?
     
     var presenter:DetailedPresenterProtocol!
     
-    var imageName:String = String()
-    var imagePath:URL = URL(fileURLWithPath: "")
-    var imageScreen:Data = Data()
+   
 
     
     @IBOutlet var removePhoto: UIButton!
@@ -42,14 +39,9 @@ class DetailedViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        presenter.didLoad()
-        
-        
-        getImage()
-        
-//        loadNote()
-        
         settingUIElements()
+        presenter.didLoad()
+                        
         imagePicker.sourceType = .camera
         imagePicker.delegate = self
         imagePicker.allowsEditing = false
@@ -59,13 +51,15 @@ class DetailedViewController: UIViewController {
         presenter.didLoad()
         
     }
-   
     
-
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        presenter.removeButtonHidden(removePhoto)
+    }
+   
     
     //MARK: - Settings UI
 
-    
     func settingUIElements(){
 
        
@@ -90,11 +84,15 @@ class DetailedViewController: UIViewController {
         removePhoto.backgroundColor = UIColor(named: ColorConstant.DetailedModule.colorButtonsDetailed)
         removePhoto.tintColor = UIColor(named: ColorConstant.DetailedModule.colorButtonsTint)
         
-        
         imageNote.layer.cornerRadius = 15
         
         
     }
+    
+    //MARK: - Image in Full Size
+    
+    func 
+    
     
     //MARK: - Actions Methods
     
@@ -106,12 +104,12 @@ class DetailedViewController: UIViewController {
     }
     @objc func dismissKeyboard () {
         view.endEditing(true)
-        presenter.didTapBackButton(entity: &note, titleNote: titleNote)
+        presenter.didTapBackButton(titleNote: titleNote)
     }
     
     @IBAction func backButtonAction(_ sender: UIButton) {
         dismiss(animated: true)
-        presenter.didTapBackButton(entity: &note, titleNote: titleNote)
+        presenter.didTapBackButton(titleNote: titleNote)
     }
     
     @IBAction func setupPhoto(_ sender: UIButton) {
@@ -120,7 +118,8 @@ class DetailedViewController: UIViewController {
     
     
     @IBAction func removePhotoAction(_ sender: UIButton) {
-        presenter.didTapRemovePhotoButton(entity: &note, imageNote: imageNote)
+        presenter.didTapRemovePhotoButton(imageNote: imageNote)
+        removePhoto.isHidden = true
     }
     
 }
@@ -130,37 +129,26 @@ class DetailedViewController: UIViewController {
 extension DetailedViewController:UIImagePickerControllerDelegate, UINavigationControllerDelegate{
 
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        presenter.didTapSetupPhotoButton(entity: &note, image: imageNote, imageName: &imageName, imagePath: &imagePath, didFinishPickingMediaWithInfo: info)
+        presenter.didTapSetupPhotoButton(image: imageNote, didFinishPickingMediaWithInfo: info)
         
         imagePicker.dismiss(animated: true)
-    }
-    
-    func getImage() {
-        imageName = imagePath.absoluteString
         
-        print(imageName)
     }
-    
-    
 }
 
-//MARK: - Implementation Protocol
+//MARK: - Implementation DetailedViewControllerProtocol
 
 extension DetailedViewController:DetailedViewControllerProtocol{
     func showNote(note: Note) {
-        self.note = note
         DispatchQueue.main.async {
             
-            self.titleNote.text = self.note?.text
-            if let image = self.note?.imageNote {
+            self.titleNote.text = note.text
+            if let image = note.imageNote {
                 self.imageNote.image = UIImage(data: image)
                 
             }
         }
-        
     }
-
-    
 }
 
 

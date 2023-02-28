@@ -36,7 +36,7 @@ class MainViewCell:UICollectionViewCell {
     
     
     
-    
+    //MARK: - Implementation MainViewCellDelegate
     
     func configurationDetailedButtonTarget(){
         detailedButton.addTarget(self, action: #selector(tappedDetailed), for: .touchUpInside)
@@ -129,7 +129,7 @@ class MainViewCell:UICollectionViewCell {
     }
 }
 
-//MARK: - Cell setting method
+    //MARK: - Cell setting method
 
 extension MainViewCell{
     
@@ -151,7 +151,6 @@ extension MainViewCell{
             stackViewY.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
             
             
-//            noteLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
             noteLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
             noteLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 5),
             noteLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -5),

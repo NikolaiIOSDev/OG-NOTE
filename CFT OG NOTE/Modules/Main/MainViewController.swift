@@ -48,7 +48,7 @@ class MainViewController: UIViewController, UINavigationControllerDelegate {
     
  
     
-    //MARK: - Settings Bar Button
+    //MARK: - Setting Bar Buttons
     
     private func settingsBarButton(){
         barButton = UIBarButtonItem(image: UIImage(systemName: "figure.mixed.cardio"), style: .done, target: self, action: #selector(addNote))
@@ -81,10 +81,6 @@ class MainViewController: UIViewController, UINavigationControllerDelegate {
         allert.addAction(allertAction)
         allert.addAction(allertCancelAction)
         present(allert, animated: true)
-//
-//        DispatchQueue.main.async {
-//            self.mainCollectionView.reloadData()
-//        }
     }
         
     
@@ -96,6 +92,7 @@ class MainViewController: UIViewController, UINavigationControllerDelegate {
         mainCollectionView = UICollectionView(frame: .zero, collectionViewLayout: mainCollectionViewLayot)
         
 //      (XIB)  mainCollectionView.register(UINib(nibName: "MainCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: CellConstant.MainModule.idCell)
+        
         mainCollectionView.register(MainViewCell.self, forCellWithReuseIdentifier: CellConstant.MainModule.idCell)
         
         view.addSubview(mainCollectionView)
@@ -208,8 +205,6 @@ extension MainViewController:MainViewCellDelegate{
 extension MainViewController:MainViewProtocols{
     func showNote(notes: [Note]) {
             self.notes = notes
-
-        
     }
     
     

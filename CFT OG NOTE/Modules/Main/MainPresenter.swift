@@ -97,9 +97,7 @@ extension MainPresenter:MainPresenterProtocols{
             let storyboardDetailed = UIStoryboard(name: "Detailed", bundle: nil)
             
             if let detailedVC = storyboardDetailed.instantiateViewController(withIdentifier: "Detailed") as? DetailedViewController  {
-                let note = notes[row]
-                detailedVC.note = note
-                
+                let note = notes[row]                
                 detailedVC.modalPresentationStyle = .fullScreen
                 
                 router.presentDetailedModule(for: note)

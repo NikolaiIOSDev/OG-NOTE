@@ -11,6 +11,10 @@ class DetailedInteractor{
     weak var presenter:DetailedPresenterProtocol!
     var context = CoreDataManager.shared.persistentContainer.viewContext
     var note:Note
+    var imageName: String = String()
+    
+    var imagePath: URL = URL(filePath: "")
+    
     
     init(note: Note) {
         self.note = note
@@ -18,11 +22,12 @@ class DetailedInteractor{
     
     
 }
+//MARK: - Implementation DetailedInteractorProtocol
 
 extension DetailedInteractor:DetailedInteractorProtocol{
-     func getNote()->Note{
+   
+     func getNote(){
         presenter.loadNote(note: note)
-        return note
     }
     
     func saveNote(){

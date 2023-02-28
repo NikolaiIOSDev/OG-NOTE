@@ -15,6 +15,7 @@
 		E730232429A627220032A960 /* DetailedProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = E730232329A627220032A960 /* DetailedProtocols.swift */; };
 		E73CE62F29AAC69F005D968E /* Note CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73CE62E29AAC69F005D968E /* Note CoreData.swift */; };
 		E73CE63129AAC80D005D968E /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73CE63029AAC80D005D968E /* Note.swift */; };
+		E73DF3D329AE9D1500FCDBAE /* FullsizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73DF3D229AE9D1500FCDBAE /* FullsizeViewController.swift */; };
 		E7487A4E29A9620E00B27A20 /* PlayfairDisplay.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E7487A4D29A9620D00B27A20 /* PlayfairDisplay.ttf */; };
 		E7487A5029A9631200B27A20 /* Oswald.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E7487A4F29A9631200B27A20 /* Oswald.ttf */; };
 		E7708DB529A6600500DCD081 /* Detailed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7708DB429A6600500DCD081 /* Detailed.storyboard */; };
@@ -49,6 +50,7 @@
 		E730232329A627220032A960 /* DetailedProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedProtocols.swift; sourceTree = "<group>"; };
 		E73CE62E29AAC69F005D968E /* Note CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Note CoreData.swift"; sourceTree = "<group>"; };
 		E73CE63029AAC80D005D968E /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
+		E73DF3D229AE9D1500FCDBAE /* FullsizeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullsizeViewController.swift; sourceTree = "<group>"; };
 		E7487A4D29A9620D00B27A20 /* PlayfairDisplay.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PlayfairDisplay.ttf; sourceTree = "<group>"; };
 		E7487A4F29A9631200B27A20 /* Oswald.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Oswald.ttf; sourceTree = "<group>"; };
 		E7708DB429A6600500DCD081 /* Detailed.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Detailed.storyboard; sourceTree = "<group>"; };
@@ -97,8 +99,17 @@
 				E730231F29A627040032A960 /* DetailedRouter.swift */,
 				E730232129A627170032A960 /* DetailedBuilder.swift */,
 				E730232329A627220032A960 /* DetailedProtocols.swift */,
+				E73DF3D429AE9D1F00FCDBAE /* Image Full Size */,
 			);
 			path = Detailed;
+			sourceTree = "<group>";
+		};
+		E73DF3D429AE9D1F00FCDBAE /* Image Full Size */ = {
+			isa = PBXGroup;
+			children = (
+				E73DF3D229AE9D1500FCDBAE /* FullsizeViewController.swift */,
+			);
+			path = "Image Full Size";
 			sourceTree = "<group>";
 		};
 		E7708DC429A6A80900DCD081 /* Core Data Manager */ = {
@@ -296,6 +307,7 @@
 				E794E17129A3906E00B27380 /* MainViewController.swift in Sources */,
 				E73CE62F29AAC69F005D968E /* Note CoreData.swift in Sources */,
 				E794E19929A3DEA300B27380 /* MainRouter.swift in Sources */,
+				E73DF3D329AE9D1500FCDBAE /* FullsizeViewController.swift in Sources */,
 				E794E19F29A4E41C00B27380 /* MainViewCell.swift in Sources */,
 				E730231C29A626EB0032A960 /* DetailedInteractor.swift in Sources */,
 				E73CE63129AAC80D005D968E /* Note.swift in Sources */,

@@ -11,7 +11,7 @@
         <!--Detailed View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="Detailed" id="Y6W-OH-hqX" customClass="DetailedViewController" customModule="CFT_WriteDown" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Detailed" id="Y6W-OH-hqX" customClass="DetailedViewController" customModule="CFT_OG_NOTE" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -41,10 +41,10 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Zhl-rJ-4UQ">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Zhl-rJ-4UQ">
                                 <rect key="frame" x="50" y="496.66666666666674" width="293" height="161"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="190" id="GaR-dz-faY"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="170" id="GaR-dz-faY"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="79" translatesAutoresizingMaskIntoConstraints="NO" id="DLL-Bo-PFb">
@@ -85,8 +85,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="bandage.fill" catalog="system"/>
                                 <connections>
-                                    <action selector="removePhoto:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="XJc-wd-k38"/>
-                                    <action selector="removePhotoAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="LBn-Sc-WFM"/>
+                                    <action selector="removePhotoAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="als-SN-aWR"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -123,7 +122,32 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1113.75" y="0.0"/>
+            <point key="canvasLocation" x="1113.7404580152672" y="0.0"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="A7N-Du-dRD">
+            <objects>
+                <viewController storyboardIdentifier="allPhoto" id="1xF-Ll-AFK" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ff9-j0-ILl">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="backgroundMain" translatesAutoresizingMaskIntoConstraints="NO" id="6aM-VJ-uJs">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CEk-2b-GnO">
+                                <rect key="frame" x="-11" y="192" width="414" height="660"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="maU-jv-njB"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FfA-cQ-sVj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1875.5725190839694" y="0.0"/>
         </scene>
     </scenes>
     <resources>
