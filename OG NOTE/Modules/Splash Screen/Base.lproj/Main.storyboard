@@ -26,7 +26,7 @@
         <!--Splash View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="Splash" id="BYZ-38-t0r" customClass="SplashViewController" customModule="CFT_OG_NOTE" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Splash" id="BYZ-38-t0r" customClass="SplashViewController" customModule="OG_NOTE" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -40,30 +40,16 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CFT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U6X-hy-qxe">
-                                <rect key="frame" x="-830.33333333333337" y="103" width="53.333333333333371" height="71"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="71" id="eUJ-QJ-klr"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="9M1-3t-4Da" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="2Ax-Fr-59g"/>
-                            <constraint firstItem="U6X-hy-qxe" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" constant="-1000" id="7JT-sQ-whY"/>
-                            <constraint firstItem="U6X-hy-qxe" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="NSN-Hx-isz"/>
                             <constraint firstItem="9M1-3t-4Da" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-1000" id="zYF-JM-6th"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ms2-n3-f3c"/>
                     <connections>
-                        <outlet property="cftLabel" destination="U6X-hy-qxe" id="5oy-GO-ypS"/>
-                        <outlet property="constraintCft" destination="7JT-sQ-whY" id="QL6-Ck-rQ9"/>
-                        <outlet property="constraintCftBottom" destination="NSN-Hx-isz" id="ciT-os-jRR"/>
                         <outlet property="constraintLogo" destination="zYF-JM-6th" id="L2h-sj-DBW"/>
                         <outlet property="constraintLogoBottom" destination="2Ax-Fr-59g" id="gQK-qs-VOD"/>
                         <outlet property="logoLabel" destination="9M1-3t-4Da" id="34m-OM-c8c"/>

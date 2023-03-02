@@ -56,7 +56,7 @@
 		E7708DB429A6600500DCD081 /* Detailed.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Detailed.storyboard; sourceTree = "<group>"; };
 		E7708DBE29A6A79D00DCD081 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		E7708DC529A6A86E00DCD081 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
-		E794E16929A3906E00B27380 /* CFT OG NOTE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CFT OG NOTE.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E794E16929A3906E00B27380 /* OG NOTE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OG NOTE.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E794E16C29A3906E00B27380 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E794E16E29A3906E00B27380 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		E794E17029A3906E00B27380 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -126,7 +126,7 @@
 		E794E16029A3906E00B27380 = {
 			isa = PBXGroup;
 			children = (
-				E794E16B29A3906E00B27380 /* CFT OG NOTE */,
+				E794E16B29A3906E00B27380 /* OG NOTE */,
 				E794E16A29A3906E00B27380 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -134,12 +134,12 @@
 		E794E16A29A3906E00B27380 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E794E16929A3906E00B27380 /* CFT OG NOTE.app */,
+				E794E16929A3906E00B27380 /* OG NOTE.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		E794E16B29A3906E00B27380 /* CFT OG NOTE */ = {
+		E794E16B29A3906E00B27380 /* OG NOTE */ = {
 			isa = PBXGroup;
 			children = (
 				E7708DC429A6A80900DCD081 /* Core Data Manager */,
@@ -147,7 +147,7 @@
 				E794E18329A390B700B27380 /* Modules */,
 				E794E18129A3908D00B27380 /* Source */,
 			);
-			path = "CFT OG NOTE";
+			path = "OG NOTE";
 			sourceTree = "<group>";
 		};
 		E794E18029A3907900B27380 /* Application */ = {
@@ -228,9 +228,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E794E16829A3906E00B27380 /* CFT OG NOTE */ = {
+		E794E16829A3906E00B27380 /* OG NOTE */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E794E17D29A3906F00B27380 /* Build configuration list for PBXNativeTarget "CFT OG NOTE" */;
+			buildConfigurationList = E794E17D29A3906F00B27380 /* Build configuration list for PBXNativeTarget "OG NOTE" */;
 			buildPhases = (
 				E794E16529A3906E00B27380 /* Sources */,
 				E794E16629A3906E00B27380 /* Frameworks */,
@@ -240,9 +240,9 @@
 			);
 			dependencies = (
 			);
-			name = "CFT OG NOTE";
+			name = "OG NOTE";
 			productName = "CFT WriteDown";
-			productReference = E794E16929A3906E00B27380 /* CFT OG NOTE.app */;
+			productReference = E794E16929A3906E00B27380 /* OG NOTE.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -260,7 +260,7 @@
 					};
 				};
 			};
-			buildConfigurationList = E794E16429A3906E00B27380 /* Build configuration list for PBXProject "CFT OG NOTE" */;
+			buildConfigurationList = E794E16429A3906E00B27380 /* Build configuration list for PBXProject "OG NOTE" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -273,7 +273,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E794E16829A3906E00B27380 /* CFT OG NOTE */,
+				E794E16829A3906E00B27380 /* OG NOTE */,
 			);
 		};
 /* End PBXProject section */
@@ -469,11 +469,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = ZT75364QJ6;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "CFT OG NOTE/Source/Info.plist";
+				INFOPLIST_FILE = "OG NOTE/Source/Info.plist";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Ну, чтобы точно не забыть 🌛";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Для фото";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -489,6 +490,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "NikolaiFedorov.CFT-WriteDown";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -500,11 +502,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = ZT75364QJ6;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "CFT OG NOTE/Source/Info.plist";
+				INFOPLIST_FILE = "OG NOTE/Source/Info.plist";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Ну, чтобы точно не забыть 🌛";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Для фото";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -520,6 +523,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "NikolaiFedorov.CFT-WriteDown";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -529,7 +533,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E794E16429A3906E00B27380 /* Build configuration list for PBXProject "CFT OG NOTE" */ = {
+		E794E16429A3906E00B27380 /* Build configuration list for PBXProject "OG NOTE" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E794E17B29A3906F00B27380 /* Debug */,
@@ -538,7 +542,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E794E17D29A3906F00B27380 /* Build configuration list for PBXNativeTarget "CFT OG NOTE" */ = {
+		E794E17D29A3906F00B27380 /* Build configuration list for PBXNativeTarget "OG NOTE" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E794E17E29A3906F00B27380 /* Debug */,
