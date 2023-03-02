@@ -15,7 +15,6 @@ class MainViewController: UIViewController, UINavigationControllerDelegate {
     //MARK: - Properties
     var presenter:MainPresenterProtocols!
     
-    var context = CoreDataManager.shared.persistentContainer.viewContext
     var notes:[Note] = [Note]()
     
     
@@ -28,6 +27,9 @@ class MainViewController: UIViewController, UINavigationControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "OG NOTE"
+        presenter.didLoad()
+        presenter.informationalNote(entity: &notes)
+
         
         settingsBarButton()
         settingsCollection()
@@ -36,9 +38,8 @@ class MainViewController: UIViewController, UINavigationControllerDelegate {
         navigationItem.hidesBackButton = true
         navigationItem.rightBarButtonItems = [barButton]
         navigationItem.leftBarButtonItems = [leftBarButton]
-        
-        presenter.didLoad()
-    
+
+            
     }
 
     override func viewWillAppear(_ animated: Bool) {

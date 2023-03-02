@@ -110,8 +110,8 @@
             filePath = "CFT OG NOTE/Modules/Detailed/DetailedViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "121"
-            endingLineNumber = "121"
+            startingLineNumber = "127"
+            endingLineNumber = "127"
             landmarkName = "removePhotoAction(_:)"
             landmarkType = "7">
          </BreakpointContent>

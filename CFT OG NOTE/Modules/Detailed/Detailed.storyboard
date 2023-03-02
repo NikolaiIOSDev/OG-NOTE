@@ -16,9 +16,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundMain" translatesAutoresizingMaskIntoConstraints="NO" id="HDQ-Wg-Nux">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                            </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="58s-ed-RTo">
                                 <rect key="frame" x="31.666666666666657" y="261" width="330" height="150"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -47,8 +44,8 @@
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="170" id="GaR-dz-faY"/>
                                 </constraints>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="79" translatesAutoresizingMaskIntoConstraints="NO" id="DLL-Bo-PFb">
-                                <rect key="frame" x="98" y="419" width="197" height="34"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="DLL-Bo-PFb">
+                                <rect key="frame" x="68" y="419" width="257" height="34"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VYO-0G-a9n">
                                         <rect key="frame" x="0.0" y="0.0" width="59" height="34"/>
@@ -62,8 +59,20 @@
                                             <action selector="setupPhoto:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="gpp-4a-b0S"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GBk-tw-RNO">
+                                        <rect key="frame" x="99" y="0.0" width="59" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="59" id="sJM-gN-jj8"/>
+                                            <constraint firstAttribute="height" constant="34" id="zM7-ap-gnG"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="eye.fill" catalog="system"/>
+                                        <connections>
+                                            <action selector="transitionFullSize:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="eeF-0k-NFU"/>
+                                        </connections>
+                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cKq-bS-Qfk">
-                                        <rect key="frame" x="138" y="0.0" width="59" height="34"/>
+                                        <rect key="frame" x="198" y="0.0" width="59" height="34"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="34" id="XNT-s6-Dpo"/>
                                             <constraint firstAttribute="width" constant="59" id="fEF-iF-Rig"/>
@@ -94,15 +103,11 @@
                         <constraints>
                             <constraint firstItem="58s-ed-RTo" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" constant="-90" id="53g-1y-JgG"/>
                             <constraint firstItem="iAJ-OQ-BrZ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="36" id="5ef-hZ-2Na"/>
-                            <constraint firstAttribute="bottom" secondItem="HDQ-Wg-Nux" secondAttribute="bottom" id="C4d-oT-udY"/>
                             <constraint firstItem="DLL-Bo-PFb" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" constant="10" id="C7g-gf-B9f"/>
                             <constraint firstItem="iAJ-OQ-BrZ" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="35" id="Dl6-zC-YUo"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Zhl-rJ-4UQ" secondAttribute="trailing" constant="50" id="E0z-ag-Onv"/>
-                            <constraint firstItem="HDQ-Wg-Nux" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="GB9-Cg-dHa"/>
                             <constraint firstItem="Zhl-rJ-4UQ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="50" id="Jer-UP-cfj"/>
                             <constraint firstItem="DLL-Bo-PFb" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="Lm3-OY-hze"/>
-                            <constraint firstItem="HDQ-Wg-Nux" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="Pk7-Mb-O6D"/>
-                            <constraint firstAttribute="trailing" secondItem="HDQ-Wg-Nux" secondAttribute="trailing" id="cTG-9E-U2P"/>
                             <constraint firstItem="ht2-0B-qO7" firstAttribute="top" secondItem="Zhl-rJ-4UQ" secondAttribute="bottom" constant="24" id="jdM-ah-shX"/>
                             <constraint firstItem="ht2-0B-qO7" firstAttribute="centerY" secondItem="vDu-zF-Fre" secondAttribute="centerY" constant="260" id="mat-Mo-FlU"/>
                             <constraint firstItem="Zhl-rJ-4UQ" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" constant="151" id="onX-PE-QFQ"/>
@@ -113,6 +118,7 @@
                     <navigationItem key="navigationItem" id="8JW-lc-tCu"/>
                     <connections>
                         <outlet property="backButton" destination="cKq-bS-Qfk" id="jHa-d7-xrB"/>
+                        <outlet property="fullSizeButton" destination="GBk-tw-RNO" id="O8n-k6-A7g"/>
                         <outlet property="imageNote" destination="Zhl-rJ-4UQ" id="qd4-ow-xmp"/>
                         <outlet property="largeTitleNote" destination="iAJ-OQ-BrZ" id="vaa-3V-fN2"/>
                         <outlet property="removePhoto" destination="ht2-0B-qO7" id="IR2-Ih-m3x"/>
@@ -124,26 +130,30 @@
             </objects>
             <point key="canvasLocation" x="1113.7404580152672" y="0.0"/>
         </scene>
-        <!--View Controller-->
+        <!--Fullsize View Controller-->
         <scene sceneID="A7N-Du-dRD">
             <objects>
-                <viewController storyboardIdentifier="allPhoto" id="1xF-Ll-AFK" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FullSize" id="1xF-Ll-AFK" customClass="FullsizeViewController" customModule="CFT_OG_NOTE" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ff9-j0-ILl">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="backgroundMain" translatesAutoresizingMaskIntoConstraints="NO" id="6aM-VJ-uJs">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CEk-2b-GnO">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CEk-2b-GnO">
-                                <rect key="frame" x="-11" y="192" width="414" height="660"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="maU-jv-njB"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="CEk-2b-GnO" firstAttribute="top" secondItem="ff9-j0-ILl" secondAttribute="top" id="4uz-me-we8"/>
+                            <constraint firstItem="CEk-2b-GnO" firstAttribute="leading" secondItem="ff9-j0-ILl" secondAttribute="leading" id="Fdc-5W-1yf"/>
+                            <constraint firstAttribute="bottom" secondItem="CEk-2b-GnO" secondAttribute="bottom" id="qsJ-fP-f0g"/>
+                            <constraint firstAttribute="trailing" secondItem="CEk-2b-GnO" secondAttribute="trailing" id="y17-gK-6wJ"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="fullSizeImageNote" destination="CEk-2b-GnO" id="TDe-pk-JHj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FfA-cQ-sVj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -151,9 +161,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="backgroundMain" width="4588" height="3500"/>
         <image name="bandage.fill" catalog="system" width="128" height="125"/>
         <image name="camera.on.rectangle.fill" catalog="system" width="128" height="98"/>
+        <image name="eye.fill" catalog="system" width="128" height="80"/>
         <image name="r.joystick.tilt.down.fill" catalog="system" width="121" height="128"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

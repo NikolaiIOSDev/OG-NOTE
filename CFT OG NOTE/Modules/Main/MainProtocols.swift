@@ -24,6 +24,7 @@ protocol MainInteractorProtocols:AnyObject{
 protocol MainPresenterProtocols:AnyObject{
     func didLoad()
     func loadNote(entity notes:[Note])
+    func informationalNote(entity notes: inout [Note])
     
     func didTapRemoveNotesLeftButton(entity notes: inout [Note], collection collectionView:UICollectionView)
     

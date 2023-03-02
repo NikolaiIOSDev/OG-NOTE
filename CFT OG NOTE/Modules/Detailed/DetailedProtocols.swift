@@ -25,9 +25,10 @@ protocol DetailedInteractorProtocol:AnyObject{
 
 
 protocol DetailedPresenterProtocol:AnyObject {
+        
     func didLoad()
     func loadNote(note:Note)
-    func removeButtonHidden(_ button:UIButton)
+    func isHiddenButton(_ button:UIButton)
     
     func didTapSetupPhotoButton(image imageNote: UIImageView, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) 
     func  didTapBackButton(titleNote text:UITextView)

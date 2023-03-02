@@ -43,7 +43,8 @@ public struct ColorConstant{
         static let colorBackgroundDetailed = "colorBackgroundDetailed"
         static let colorButtonsDetailed = "colorButtonsDetailed"
         static let colorButtonsTint = "colorButtonsTint"
-        
+        static let colorTitleNote = "colorTitleNote"
+        static let colorTextTitleNote = "colorTextTitleNote"
         
     }
     

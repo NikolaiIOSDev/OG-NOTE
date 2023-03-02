@@ -59,8 +59,8 @@ class SplashViewController: UIViewController {
     }
     
     @objc private func animationsBottom(){
-        constraintCftBottom.constant = 1000
-        constraintLogoBottom.constant = 1000
+        constraintCftBottom.constant = -1000
+        constraintLogoBottom.constant = -1000
         UIView.animate(withDuration: 1.0,
                        delay: 0.3,
                        usingSpringWithDamping: 0.8,

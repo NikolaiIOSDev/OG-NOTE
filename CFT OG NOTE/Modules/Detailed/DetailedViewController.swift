@@ -21,6 +21,7 @@ class DetailedViewController: UIViewController {
    
 
     
+    @IBOutlet var fullSizeButton: UIButton!
     @IBOutlet var removePhoto: UIButton!
     @IBOutlet var backButton: UIButton!
     
@@ -54,7 +55,8 @@ class DetailedViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        presenter.removeButtonHidden(removePhoto)
+        presenter.isHiddenButton(removePhoto)
+        presenter.isHiddenButton(fullSizeButton)
     }
    
     
@@ -64,8 +66,9 @@ class DetailedViewController: UIViewController {
 
        
         titleNote.font = UIFont(name: FontsConstant.fontsNote, size: 15)
-        
         titleNote.layer.cornerRadius = 15
+        titleNote.backgroundColor = UIColor(named:ColorConstant.DetailedModule.colorTitleNote)
+        titleNote.textColor = UIColor(named:ColorConstant.DetailedModule.colorTextTitleNote)
         
         
         largeTitleNote.font = UIFont(name: FontsConstant.fonts, size: 30)
@@ -73,15 +76,15 @@ class DetailedViewController: UIViewController {
         largeTitleNote.textColor = UIColor(named: ColorConstant.DetailedModule.colorLargeTitleNote)
         
         setupPhotoButton.layer.cornerRadius = 8
-        setupPhotoButton.backgroundColor = UIColor(named: ColorConstant.DetailedModule.colorButtonsDetailed)
         setupPhotoButton.tintColor = UIColor(named: ColorConstant.DetailedModule.colorButtonsTint)
         
         backButton.layer.cornerRadius = 8
-        backButton.backgroundColor = UIColor(named: ColorConstant.DetailedModule.colorButtonsDetailed)
         backButton.tintColor = UIColor(named: ColorConstant.DetailedModule.colorButtonsTint)
         
+        fullSizeButton.layer.cornerRadius = 8
+        fullSizeButton.tintColor = UIColor(named: ColorConstant.DetailedModule.colorButtonsTint)
+        
         removePhoto.layer.cornerRadius = 8
-        removePhoto.backgroundColor = UIColor(named: ColorConstant.DetailedModule.colorButtonsDetailed)
         removePhoto.tintColor = UIColor(named: ColorConstant.DetailedModule.colorButtonsTint)
         
         imageNote.layer.cornerRadius = 15
@@ -89,14 +92,9 @@ class DetailedViewController: UIViewController {
         
     }
     
-    //MARK: - Image in Full Size
-    
-    func 
-    
-    
     //MARK: - Actions Methods
     
-    func cancelKeyboard(){
+    func  cancelKeyboard(){
         let tapScreen = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         tapScreen.cancelsTouchesInView = true
         view.addGestureRecognizer(tapScreen)
@@ -117,9 +115,18 @@ class DetailedViewController: UIViewController {
     }
     
     
+    @IBAction func transitionFullSize(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "Detailed", bundle: nil)
+        guard let fullSizeVC = storyboard.instantiateViewController(withIdentifier: "FullSize") as? FullsizeViewController else {return}
+        fullSizeVC.forImageView = imageNote.image
+        present(fullSizeVC, animated: true)
+        
+    }
+    
     @IBAction func removePhotoAction(_ sender: UIButton) {
         presenter.didTapRemovePhotoButton(imageNote: imageNote)
         removePhoto.isHidden = true
+        fullSizeButton.isHidden = true
     }
     
 }

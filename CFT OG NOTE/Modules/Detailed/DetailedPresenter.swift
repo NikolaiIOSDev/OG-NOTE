@@ -54,7 +54,7 @@ extension DetailedPresenter:DetailedPresenterProtocol{
             }
         }
     
-    func removeButtonHidden(_ button:UIButton){
+    func isHiddenButton(_ button:UIButton){
         if interactor.note.imageNote == nil {
             button.isHidden = true
         } else {

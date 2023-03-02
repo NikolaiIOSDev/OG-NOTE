@@ -26,23 +26,28 @@ class MainPresenter{
 //MARK: - Implementation MainPresenterProtocol
 
 extension MainPresenter:MainPresenterProtocols{
- 
     
     // Datas interaction
+    
     func didLoad() {
         interactor.getNote()
-        
     }
     
     func loadNote(entity notes:[Note]){
         self.view.showNote(notes: notes)
-
-        
     }
 
+    //
+    func informationalNote(entity notes: inout [Note]) {
+        if notes.count == 0{
+            let note = Note(context: interactor.context)
+            note.text = "Хэй, OG, заметки ждут своего часа. 📝                                А голова информационной разгрузки. 🫠"
+            notes.append(note)
+            interactor.saveNote()
+        }
+    }
     
     // Buttons interaction
-    
     
     func didTapAddNoteRightButton(entity notes: inout [Note], collecton collectionView: UICollectionView, tf textField: UITextField){
         let newNote = Note(context: interactor.context)
