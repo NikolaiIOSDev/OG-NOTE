@@ -68,15 +68,15 @@ And also implemented the animation of the boot screen.  🎬
 
 ### First Module
 
-<img src="https://user-images.githubusercontent.com/99130444/222684346-f6d39080-eae7-4a80-bf5a-a3454f7edbe2.png" width="280"> <img src="https://user-images.githubusercontent.com/99130444/222684531-648da961-03aa-4c66-81f9-9d3c905b43e3.png" width="280">   
-<img src="https://user-images.githubusercontent.com/99130444/222684649-8431ba68-066b-4ba3-ab2a-90dfe194ec08.png" width="280"> <img src="https://user-images.githubusercontent.com/99130444/222684747-10e9a39e-98ed-4555-a9c4-0250bc18efef.png" width="280">
+<img src="https://user-images.githubusercontent.com/99130444/222684346-f6d39080-eae7-4a80-bf5a-a3454f7edbe2.png" width="320"> <img src="https://user-images.githubusercontent.com/99130444/222684531-648da961-03aa-4c66-81f9-9d3c905b43e3.png" width="320">   
+<img src="https://user-images.githubusercontent.com/99130444/222684649-8431ba68-066b-4ba3-ab2a-90dfe194ec08.png" width="320"> <img src="https://user-images.githubusercontent.com/99130444/222684747-10e9a39e-98ed-4555-a9c4-0250bc18efef.png" width="320">
 
 
 
 ### Second Module
 
-<img src="https://user-images.githubusercontent.com/99130444/222685189-20c708ab-3c42-42b0-a88d-01dc4f1c2fcb.png" width="280"> <img src="https://user-images.githubusercontent.com/99130444/222685283-589dce8c-cad1-4e05-9d85-fc10df06d5e8.png" width="280">   
-<img src="https://user-images.githubusercontent.com/99130444/222685385-3c91d55f-dd20-4afd-859c-aa40ca0c4fab.png" width="280"> <img src="https://user-images.githubusercontent.com/99130444/222685413-db7d2b8e-57ec-4abe-8075-4e3d6b465345.png" width="280">
+<img src="https://user-images.githubusercontent.com/99130444/222685189-20c708ab-3c42-42b0-a88d-01dc4f1c2fcb.png" width="320"> <img src="https://user-images.githubusercontent.com/99130444/222685283-589dce8c-cad1-4e05-9d85-fc10df06d5e8.png" width="320">   
+<img src="https://user-images.githubusercontent.com/99130444/222685385-3c91d55f-dd20-4afd-859c-aa40ca0c4fab.png" width="320"> <img src="https://user-images.githubusercontent.com/99130444/222685413-db7d2b8e-57ec-4abe-8075-4e3d6b465345.png" width="320">
 
 
 
