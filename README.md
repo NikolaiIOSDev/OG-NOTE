@@ -15,11 +15,11 @@
 
 ## Description
 
-I present to your attention the application OG NOTE, for real OG, which allows you to write down notes, and thereby informationally unload your head. 🫠  
-The functionality of the application includes creating, reading, editing, deleting notes. 📝  
-In addition, you can add photos to notes so that you don’t forget what you need to do. 📸  
-The application is built on the VIPER architecture, interaction with data is carried out using Core Data. 📬  
-And also implemented the animation of the boot screen. 🎬  
+I present to your attention the application OG NOTE, for real OG, which allows you to write down notes, and thereby informationally unload your head.  🫠  
+The functionality of the application includes creating, reading, editing, deleting notes.  📝  
+In addition, you can add photos to notes so that you don’t forget what you need to do.  📸  
+The application is built on the VIPER architecture, interaction with data is carried out using Core Data.  📬  
+And also implemented the animation of the boot screen.  🎬  
 
 ## Animated Splash Screen 
 
